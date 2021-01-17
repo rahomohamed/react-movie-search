@@ -3,7 +3,7 @@ import Search from "./components/Search";
 
 function App() {
   return (
-      <div className="app-container">
+      <div className="App">
       <h1>The Shoppies</h1>
       <Search/>
       </div>
