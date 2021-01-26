@@ -1,4 +1,4 @@
-import Search from "./components/searchMovies";
+import Search from "./components/Search";
 
 function App() {
   return (
