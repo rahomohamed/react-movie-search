@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/styles.css";
 import MovieCard from "./movieCard.js";
+import popcorn from "../assets/popcorn.png" 
 
 export default function Search() {
   const [query, setQuery] = useState("");
@@ -27,19 +28,22 @@ export default function Search() {
 
   return (
     <>
-      <form className="search">
-        <label className="search-label" htmlFor="query">
-          Movie Name
-        </label>
+       <div className="search-container">
+            <img className="search__icon" src={popcorn} alt='popcorn' />
+            <div className="search__details">
+                <h1 className="search__header">React Movie Search</h1>
+      <form>
         <input
           className="input"
           type="text"
           name="query"
-          placeholder="i.e. Jurassic Park"
+          placeholder="Search for a movie..."
           value={query}
           onChange={handleChange}
         />
       </form>
+      </div>
+      </div>
       <div className="card-list">
         {movies
           .filter((movie) => movie.poster_path)
@@ -47,6 +51,6 @@ export default function Search() {
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>
-    </>
+      </>
   );
 }
