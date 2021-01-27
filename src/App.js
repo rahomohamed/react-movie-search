@@ -1,4 +1,6 @@
 import Search from "./components/Search";
+import "./styles/styles.css"
+
 
 function App() {
   return (
